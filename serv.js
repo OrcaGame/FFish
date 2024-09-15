@@ -3,7 +3,7 @@ const fs = require("fs")
 const app = express()
 app.use(express.json())
 
-let Object = {
+let Objec = {
   users:{},
   lid:{}
 }
@@ -11,8 +11,8 @@ try{
 let message = JSON.parse(fs.readFileSync("/message.json",{encoding:'Utf8'}))
 }
 catch{
-  fs.writeFileSync("/message.json",JSON.stringify(Object),{encoding:'utf8',flag:'w'})
-  console.log(Object)
+  fs.writeFileSync("/message.json",JSON.stringify(Objec),{encoding:'utf8',flag:'w'})
+  console.log(Objec)
   let message = JSON.parse(fs.readFileSync("/message.json",{encoding:'Utf8'}))
   console.log(message)
 }
