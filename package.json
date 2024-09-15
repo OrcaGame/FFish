@@ -1,0 +1,21 @@
+{
+  "name": "tgbot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon serv.js",
+    "start": "node serv.js",
+    "index": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.19.2",
+    "node-telegram-bot-api": "^0.66.0",
+    "nodemon": "^3.1.4",
+    "tgbot": "file:",
+    "ws": "^8.18.0"
+  }
+}
