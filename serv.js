@@ -3,7 +3,19 @@ const fs = require("fs")
 const app = express()
 app.use(express.json())
 
+let Object = {
+  users:{},
+  lid:{}
+}
+try{
 let message = JSON.parse(fs.readFileSync("/message.json",{encoding:'Utf8'}))
+}
+catch{
+  fs.writeFileSync("/message.json",JSON.stringify(Object),{encoding:'utf8',flag:'w'})
+  console.log(Object)
+  let message = JSON.parse(fs.readFileSync("/message.json",{encoding:'Utf8'}))
+  console.log(message)
+}
 
 const port = 1331
 
