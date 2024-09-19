@@ -1,7 +1,9 @@
 const express = require("express")
 const fs = require("fs")
 const app = express()
-app.use(express.json())
+app.use(express.json())\
+const cors = require('cors')
+app.use(cors())
 
 let Objec = {
   users:{},
