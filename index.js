@@ -37,7 +37,7 @@ bot.on('message',async msg=>{
             else{
               message.users[usTg].value+=1000
             }     
-            fs.writeFileSync("/message.json",JSON.stringify(message),{encoding:'utf8',flag:'w'})
+            await fs.writeFileSync("/message.json",JSON.stringify(message),{encoding:'utf8',flag:'w'})
             sendMes(msg,"print /buy")
           }
           catch(error ){
@@ -82,7 +82,7 @@ bot.on('message',async msg=>{
             else{
               message.users[usTg].value+=1000
             }     
-            fs.writeFileSync("/message.json",JSON.stringify(message),{encoding:'utf8',flag:'w'})
+            await fs.writeFileSync("/message.json",JSON.stringify(message),{encoding:'utf8',flag:'w'})
         }
         catch(error) {
             console.log(error);
