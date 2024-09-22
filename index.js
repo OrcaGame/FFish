@@ -1,16 +1,17 @@
 const telegramAPI = require('node-telegram-bot-api')
 const fs = require('fs')
+let message
 let Object = {
   users:{},
   lid:{}
 }
 try{
-let message = JSON.parse(fs.readFileSync("/message.json",{encoding:'Utf8'}))
+message = JSON.parse(fs.readFileSync("/message.json",{encoding:'Utf8'}))
 }
 catch{
   fs.writeFileSync("/message.json",JSON.stringify(Object),{encoding:'utf8',flag:'w'})
   console.log(Object)
-  let message = JSON.parse(fs.readFileSync("/message.json",{encoding:'Utf8'}))
+  message = JSON.parse(fs.readFileSync("/message.json",{encoding:'Utf8'}))
   console.log(message)
 }
 const token = '5749086938:AAHlP5Rg63kqmdHprVu4GOvLFBMY00e6oss'
