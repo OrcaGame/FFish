@@ -21,7 +21,7 @@ bot.on('message',async msg=>{
     bot.on("polling_error", console.log)
       switch(msg.text){
         case "/start":
-            sendMes(msg.chat.id,"print /buy")
+            sendMes(msg,"print /buy")
         break
       case "/buy":
         bot.sendInvoice(
