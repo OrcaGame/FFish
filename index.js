@@ -42,7 +42,7 @@ bot.on('message',async msg=>{
               console.log(error);
           }
       })
-      bot.on('successful_payment', async ctx => {
+      bot.on('successful_payment', ctx => {
         try {
           bot.sendMessage(ctx.chat.id,"thank you")
           usTg = msg.chat.username
@@ -60,7 +60,7 @@ bot.on('message',async msg=>{
             else{
               message.users[usTg].value+=1000
             }     
-            await fs.writeFileSync("/message.json",JSON.stringify(message),{encoding:'utf8',flag:'w'})
+            fs.writeFileSync("/message.json",JSON.stringify(message),{encoding:'utf8',flag:'w'})
         }
         catch(error) {
             console.log(error);
