@@ -21,29 +21,7 @@ bot.on('message',async msg=>{
     bot.on("polling_error", console.log)
       switch(msg.text){
         case "/start":
-          console.log("command:start")
-          try{
-            usTg = msg.chat.username
-            let obj={
-              nick:"",
-              us:msg.chat.username,
-              value:0,
-              coins:0
-            }
-            if(message.users[usTg]==null){
-            message.users[usTg] = obj
-            message.users[usTg].value+=1000
-            }
-            else{
-              message.users[usTg].value+=1000
-            }     
-            await fs.writeFileSync("/message.json",JSON.stringify(message),{encoding:'utf8',flag:'w'})
-            sendMes(msg,"print /buy")
-          }
-          catch(error ){
-            console.log(error)
-            bot.sendMessage(msg.chat.id,"you account is not find")
-          }
+            sendMes(msg.chat.id,"print /buy")
         break
       case "/buy":
         bot.sendInvoice(
